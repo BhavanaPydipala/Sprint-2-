@@ -1,6 +1,5 @@
 package com.cap.service;
 
-import java.util.Optional;
 
 import com.cap.entity.EmployeeDocumentDto;
 import com.cap.entity.VerificationDto;
@@ -13,6 +12,5 @@ public interface BcgService {
 
 	VerificationDto setStatus(VerificationDto verificationdto);
 
-	//Optional<EmployeeDocumentDto>  getFile(Integer fileId);
 
 }

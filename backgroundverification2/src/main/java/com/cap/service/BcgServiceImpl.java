@@ -1,6 +1,6 @@
 package com.cap.service;
 
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,10 +35,5 @@ public class BcgServiceImpl implements  BcgService {
 		
 	}
 
-	/*@Override
-	public Optional<EmployeeDocumentDto> getFile(Integer fileId) {
-		// TODO Auto-generated method stub
-		return bcgdao.findById(fileId);
-	}
-*/
+	
 }

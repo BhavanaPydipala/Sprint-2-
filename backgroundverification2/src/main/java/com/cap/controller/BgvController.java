@@ -1,14 +1,8 @@
 package com.cap.controller;
 
-import java.util.Optional;
-
-import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -66,16 +60,6 @@ public class BgvController {
 			return new ResponseEntity<String>("unsuccessfull",HttpStatus.OK);
 		}
 	}
-	/*	@GetMapping(value="DownloadFile/{file-Id}")
-		public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable("file-Id") Integer fileId)
-		{
-			EmployeeDocumentDto doc=  bcgservice.getFile(fileId).get();
-			return ResponseEntity.ok()
-					.contentType(MediaType.parseMediaType(doc.getDocType()))
-					.header(HttpHeaders.CONTENT_DISPOSITION,"attachment:filename=\""+doc.getDocType()+"\"")
-					.body(new ByteArrayResource(doc.getDocData()));
-			
-		}*/
 	}
 
 	
