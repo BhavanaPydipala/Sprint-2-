@@ -19,35 +19,35 @@ import com.cap.service.BcgService;
 import com.cap.service.LoginService;
 
 @RestController
-@RequestMapping("/bgv")
+@RequestMapping("/BackGroundVerification")
 @CrossOrigin("http://localhost:4200")
 public class BgvController {
 	@Autowired
 	LoginService loginservice;
 	@Autowired
 	BcgService bcgservice;
-	@GetMapping(value="/login/{enter-userid}/{password}")
+	@GetMapping(value="/BackgroundVerifierLogin/{enter-userid}/{password}")
 	public ResponseEntity<LoginDto> authentication(@PathVariable("enter-userid") int id,@PathVariable("password") String pass)
 	{
 		LoginDto loginobj=loginservice.authentication(id,pass);
 			ResponseEntity<LoginDto> response=new ResponseEntity<LoginDto>(loginobj,HttpStatus.OK);
 			return response;
 		}
-	@GetMapping(value="/getdocumentbyid/{enter-id}")
+	@GetMapping(value="/GetDocumentById/{enter-id}")
 	public ResponseEntity<EmployeeDocumentDto>getById(@PathVariable("enter-id")  int id)
 	{
 		EmployeeDocumentDto employeedocumentdtoobj=bcgservice.getById(id);
 		ResponseEntity<EmployeeDocumentDto> response=new ResponseEntity<EmployeeDocumentDto>(employeedocumentdtoobj,HttpStatus.OK);
 		return response;
 	}
-	@GetMapping(value="/getdocumentbyname/{enter-name}")
+	@GetMapping(value="/GetDocumentByName/{enter-name}")
 	public ResponseEntity<EmployeeDocumentDto>getById(@PathVariable("enter-name")  String name)
 	{
 		EmployeeDocumentDto employeedocumentdtoobj=bcgservice.getByName(name);
 		ResponseEntity<EmployeeDocumentDto> response=new ResponseEntity<EmployeeDocumentDto>(employeedocumentdtoobj,HttpStatus.OK);
 		return response;
 	}
-	@PostMapping(value="/setstatus")
+	@PostMapping(value="/SetStatus")
 	public ResponseEntity<String> setStatus(@RequestBody VerificationDto verificationdto)
 	{
 		VerificationDto vdto=bcgservice.setStatus(verificationdto);
